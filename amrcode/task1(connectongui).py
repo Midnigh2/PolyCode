@@ -10,16 +10,14 @@ form_class = uic.loadUiType("./dialog.ui")[0]
 
 
 class main(QMainWindow, form_class):
-    HOST = "192.168.212.220"
-    PORT = "7171"
 
     def __init__(self):
         super().__init__()
         self.previous_position = self
         self.current_position = self
         self.selected_point = self
+        self.tn = self
 
-        self.tn = telnetlib.Telnet(self.HOST, self.PORT)
         self.setupUi(self)
 
         self.cn_btn.clicked.connect(self.btn_login)
@@ -40,6 +38,8 @@ class main(QMainWindow, form_class):
         self.t2.daemon = True
 
     def btn_login(self):
+        self.HOST = "192.168.212.220"
+        self.PORT = "7171"
         pw = self.lineEdit.text()
         self.password = pw
         self.tn = telnetlib.Telnet(self.HOST, self.PORT)
