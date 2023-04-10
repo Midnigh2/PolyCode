@@ -6,9 +6,6 @@ import sys
 import time
 from interpreter.interpreter import InterpreterHelper
 
-# num of commands after which clear_interpreter() command will be invoked.
-# If interpreted statements are not cleared periodically then "runtime too much behind" error may
-# be shown when leaving interpreter mode
 CLEARBUFFER_LIMIT = 500
 
 
@@ -49,9 +46,6 @@ def send_cmd_interpreter_mode_file(intrp, commandFile):
                 logging.info(f"Last executed id {intrp.get_last_executed_id()}/{command_id}")
                 time.sleep(2)
 
-            # Manual buffer clear is necessary when large amount of statements is sent in one interpreter mode session.
-            # By default statements are cleared when leaving interpreter mode.
-            # Look at CLEARBUFFER_LIMIT comment for more info.
             logging.info("Clearing all interpreted statements")
             intrp.clear()
         command_count += 1
