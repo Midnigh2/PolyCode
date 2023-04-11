@@ -97,7 +97,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label3">
+  <widget class="QLabel" name="label5">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -113,7 +113,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label4">
+  <widget class="QLabel" name="label3">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -132,20 +132,23 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>50</x>
      <y>40</y>
      <width>200</width>
-     <height>30</height>
+     <height>50</height>
     </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>-10</x>
      <y>40</y>
      <width>54</width>
-     <height>30</height>
+     <height>50</height>
     </rect>
    </property>
    <property name="text">
@@ -155,13 +158,13 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="cur_label">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>530</x>
      <y>40</y>
-     <width>54</width>
-     <height>30</height>
+     <width>120</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="text">
@@ -174,10 +177,10 @@
   <widget class="QPushButton" name="cn_btn">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>260</x>
      <y>40</y>
      <width>120</width>
-     <height>30</height>
+     <height>50</height>
     </rect>
    </property>
    <property name="text">
@@ -187,10 +190,10 @@
   <widget class="QPushButton" name="logoutbtn">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>390</x>
      <y>40</y>
      <width>120</width>
-     <height>30</height>
+     <height>50</height>
     </rect>
    </property>
    <property name="text">
