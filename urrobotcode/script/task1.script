@@ -1,0 +1,53 @@
+#위치설정
+def set_position(x_point, y_point, z_point):
+	default_position=p[x_point, y_point, z_point, 2.241, -2.202, -0.000]
+	return default_position
+end
+
+#메인코드
+def pallet():
+	count_pa1 = 0
+	count_pa2 = 0
+	count = 0
+	popup("팔레타이징을 시작합니다.", "알림", False, False, blocking=True)
+	while count < 6:
+		if count <= 2:
+			y_position1 = -0.304 + (0.054 * count_pa1)
+			movej(set_position(0.272, y_position1, 0.088))
+			movel(set_position(0.272, y_position1, 0.024))
+			sync()
+			movel(set_position(0.272, y_position1, 0.088))
+			movej(set_position(0.087, -0.256, 0.201))
+			sync()
+			movel(set_position(0.087, -0.256, 0.101))
+			movel(set_position(0.087, -0.256, 0.201))
+			sync()
+			count = count + 1
+			count_pa1 = count_pa1 + 1
+			if count_pa1 == 3:
+				count_pa1 = 0
+			end
+		elif count >= 3:
+			y_position2 = -0.311 + (0.054 * count_pa2)
+			movej(set_position(0.338, y_position2, 0.088))
+			movel(set_position(0.338, y_position2, 0.024))
+			sync()
+			movel(set_position(0.338, y_position2, 0.088))
+			movej(set_position(0.087, -0.256, 0.201))
+			sync()
+			movel(set_position(0.087, -0.256, 0.101))
+			movel(set_position(0.087, -0.256, 0.201))
+			sync()
+			count = count + 1
+			count_pa2 = count_pa2 + 1
+			if count_pa2 == 3:
+				count_pa2 = 0
+			end
+			if count == 6:
+				count = 0
+				break
+			end
+		end
+	end
+	popup("팔레타이징 완료", "알림", False, False, blocking=True)
+end
