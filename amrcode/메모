@@ -1,0 +1,15 @@
+task1(connectongui).py = python을 이용해 AMR을 이동시키고 현재 운행 정보를 표시하는 코드
+task2(chaseongui).py = python을 이용해 AMR 위치를 추적해서 지도에 표시하는 코드
+dialog.ui = task1에 사용한 gui / mapgui.ui = task2에 사용한 gui
+
+task1을 제작 후, telnet으로 할 수 있는 응용에 대해 추가적으로 고민하다가 task2도 제작해보았다.
+telnet은 텍스트 기반의 상호통신이므로 amr과 노트북의 연결방법에 대해 생각해야했는데, 구글에 검색해서 나오는 예제는 위 모델에 통용되지 않았다.
+mobileplanner 상의 command line을 확인해 로봇이 어디까지 값을 읽는지, 내가 p/w를 입력했을 때 어떠한 형태로 값을 받아내는지에 대한 확인이 필요. (다른 제조사의 로봇을 사용할 때도 잊지 않아야겠다.
+Omron LD-90 제품은 개행 단위로 명령을 받아내므로, EOL에 도달하여 오류를 발생시키지 않도록 적절한 확인지점이 필요하다.
+
+task2의 지도를 제작할 때 mobileplanner의 x,y 와 qt designer의 x,y를 동기화할 때 서로간의 y좌표 증감이 x축을 기준으로 대칭이었으므로 abs함수를 이용해 조정
+
+theta 값을 받아 이를 구현하는 코드 구현이 매우 어려웠다.
+mobileplanner에서 theta 값은 실수이므로 angle 변수를 생성해 float으로 받고, 이를 다시 int로 정수화 했다.
+또, mobileplanner에서 theta 값은 -180~180의 실수 범위로 표기되었으므로 위 값이 0보다 작으면 360을 더했다.
+그 후 pyqt의 객체와 함수를 이용해 angle 변수를 회전시키게 한 후, cur_robot 변수에 대입했다.
