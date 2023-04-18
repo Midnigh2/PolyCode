@@ -1,4 +1,0 @@
-draw-sin-task.py = sin그래프를 그리는 함수에 대한 코드입니다.
-commands.txt = 위의 코드로 실행되어 만들어진 x,y,z 좌표를 저장하기 위한 텍스트 파일입니다.
-sendInterpreterFromFile.py = commands.txt 텍스트 파일을 UR3e에 전송하기 위한 코드입니다.
-구현해보면서 힘들었던 것 : ur로봇의 적당한 회전각과 활동반경을 잡아주는 일. rx, ry, rz 값을 고정해놓고 코드를 작성했기 때문에 로봇이 위치역학적으로 도달할 수 없는 지점에 가는 경우가 잦았다.
