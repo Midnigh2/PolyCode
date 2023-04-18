@@ -1,2 +1,3 @@
+Teams 링크 참조 : https://o365kopo-my.sharepoint.com/:o:/g/personal/2261114003_office_kopo_ac_kr/EiZ-35D2CWJPpQymYrq56kYBvnS3_ljdZdBx28moOEy3Og
 QLabel에 resource로 적용시켜 이미지를 삽입한 후 pycharm에서 코드를 실행했을 때 경로 오류 발생 -> 해당 리소스 파일을 python에 포함시키거나, QPixMap를 이용해 이미지 삽입을 하자.
 Thread가 제대로 작동하지 않음 < Thread가 어디서 동작해야할지 위치 주의하여 작성을 하자.
