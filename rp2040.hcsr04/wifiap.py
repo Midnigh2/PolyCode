@@ -1,14 +1,10 @@
-# Wi-Fi AP Mode Example
-#
-# This example shows how to use Wi-Fi in Access Point mode.
 import network, socket, sys, time, gc
 
-SSID ='My_Nano_RP2040_Connect'   # Network SSID
-KEY  ='1234567890'  # Network key (must be 10 chars)
-HOST = ''           # Use first available interface
-PORT = 8080         # Arbitrary non-privileged port
+SSID = '' # 네트워크 SSID
+KEY  = '' # 네트워크 키(10자)
+HOST = '' # 사용 가능한 첫번째 인터페이스
+PORT = 8080 # 포트번호
 
-# Init wlan module and connect to network
 wlan = network.WLAN(network.AP_IF)
 wlan.active(True)
 wlan.config(essid=SSID, key=KEY, security=wlan.WEP, channel=2)
@@ -28,11 +24,9 @@ def start_streaming(server):
     print ('Waiting for connections..')
     client, addr = server.accept()
 
-    # set client socket timeout to 5s
     client.settimeout(5.0)
     print ('Connected to ' + addr[0] + ':' + str(addr[1]))
 
-    # FPS clock
     clock = time.clock()
     while (True):
         try:
@@ -48,11 +42,10 @@ def start_streaming(server):
 while (True):
     try:
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # Bind and listen
         server.bind([HOST, PORT])
         server.listen(1)
 
-        # Set server socket to blocking
+        # 소켓차단
         server.setblocking(True)
         while (True):
             start_streaming(server)
