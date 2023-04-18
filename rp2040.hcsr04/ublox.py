@@ -1,15 +1,11 @@
-# Wi-Fi AP Mode Example
-#
-# This example shows how to use Wi-Fi in Access Point mode.
 import network, socket, sys, time, gc, _thread, select, re
 
-SSID ='Nano_RP2040_1009'   # Network SSID
-KEY  ='1234567890'  # Network key (must be 10 chars)
-HOST = ''           # Use first available interface
-PORT = 1009         # Arbitrary non-privileged port
+SSID = '' # 네트워크 SSID
+KEY  = '' # 네트워크 키(10자)
+HOST = '' # 사용 가능한 첫번째 인터페이스
+PORT = '' # 포트번호
 
-# Init wlan module and connect to network
-wlan = network.WLAN(network.AP_IF) # Create a WLAN network interface object
+wlan = network.WLAN(network.AP_IF) 
 wlan.active(True) # Activate (“up”) or deactivate (“down”) network interface
 wlan.config(essid=SSID, key=KEY, security=wlan.WEP, channel=2)
 print("AP mode started. SSID: {} IP: {}".format(SSID, wlan.ifconfig()[0]))
@@ -34,7 +30,7 @@ class UBLOX:
             return False
         self._server.listen(1)
 
-        # Set server socket to blocking
+        # 소켓차단
         #self._server.setblocking(True)
 
         _thread.start_new_thread(self.shuttle, ())
