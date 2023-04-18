@@ -3,7 +3,7 @@ import network, socket, sys, time, gc, _thread, select, re
 SSID = '' # 네트워크 SSID
 KEY  = '' # 네트워크 키(10자)
 HOST = '' # 사용 가능한 첫번째 인터페이스
-PORT = '' # 포트번호
+PORT = 1009 # 포트번호
 
 wlan = network.WLAN(network.AP_IF) 
 wlan.active(True) # Activate (“up”) or deactivate (“down”) network interface
