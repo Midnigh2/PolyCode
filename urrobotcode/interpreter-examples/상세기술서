@@ -1,3 +1,4 @@
+Teams 링크 참조 : https://o365kopo-my.sharepoint.com/:o:/g/personal/2261114003_office_kopo_ac_kr/EiZ-35D2CWJPpQymYrq56kYBvnS3_ljdZdBx28moOEy3Og
 draw-sin-task.py = sin그래프를 그리는 함수에 대한 코드입니다.
 commands.txt = 위의 코드로 실행되어 만들어진 x,y,z 좌표를 저장하기 위한 텍스트 파일입니다.
 sendInterpreterFromFile.py = commands.txt 텍스트 파일을 UR3e에 전송하기 위한 코드입니다.
